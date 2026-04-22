@@ -26,18 +26,21 @@ A RESTful backend application built using **FastAPI** and **MySQL** that allows 
 
 ## 📁 Project Structure
 
-```
-student_management_system/
+```id="newstruct"
+student-management-api-fastapi/
 │
 ├── app/
-│   ├── config.py        # Environment config
-│   ├── database.py      # DB connection
-│   ├── models.py        # Data model
-│   └── services.py      # Business logic
+│   ├── __init__.py        # Marks app as a Python package
+│   ├── config.py          # Loads environment variables
+│   ├── database.py        # Database connection setup
+│   ├── models.py          # Data models (Student class)
+│   └── services.py        # Business logic (CRUD operations)
 │
-├── api.py               # FastAPI routes
-├── requirements.txt
-└── .env (ignored)
+├── api.py                 # FastAPI routes (endpoints)
+├── requirements.txt       # Project dependencies
+├── README.md              # Project documentation
+├── .gitignore             # Ignored files (env, venv, etc.)
+└── .env                   # Environment variables (not pushed)
 ```
 
 ---
@@ -46,7 +49,7 @@ student_management_system/
 
 ### 1. Clone the repository
 
-```
+```id="clonecmd"
 git clone https://github.com/syedmadniashraf/student-management-api-fastapi.git
 cd student-management-api-fastapi
 ```
@@ -55,7 +58,7 @@ cd student-management-api-fastapi
 
 ### 2. Create virtual environment
 
-```
+```id="venvcmd"
 python3 -m venv venv
 source venv/bin/activate
 ```
@@ -64,7 +67,7 @@ source venv/bin/activate
 
 ### 3. Install dependencies
 
-```
+```id="installcmd"
 pip install -r requirements.txt
 ```
 
@@ -72,9 +75,9 @@ pip install -r requirements.txt
 
 ### 4. Configure environment variables
 
-Create `.env` file:
+Create a `.env` file in the root directory:
 
-```
+```id="envcmd"
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=yourpassword
@@ -85,17 +88,15 @@ DB_NAME=student_management_system
 
 ### 5. Run the server
 
-```
+```id="runcmd"
 uvicorn api:app --reload
 ```
 
 ---
 
-### 6. API Documentation
+### 6. Access API Docs
 
-Open in browser:
-
-```
+```id="docscmd"
 http://127.0.0.1:8000/docs
 ```
 
@@ -103,13 +104,13 @@ http://127.0.0.1:8000/docs
 
 ## 🧪 API Endpoints
 
-| Method | Endpoint         | Description      |
-| ------ | ---------------- | ---------------- |
-| POST   | /students        | Add student      |
-| GET    | /students        | Get all students |
-| GET    | /students/{roll} | Get by roll      |
-| PUT    | /students/{roll} | Update           |
-| DELETE | /students/{roll} | Delete           |
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| POST   | /students        | Add student         |
+| GET    | /students        | Get all students    |
+| GET    | /students/{roll} | Get student by roll |
+| PUT    | /students/{roll} | Update student      |
+| DELETE | /students/{roll} | Delete student      |
 
 ---
 
@@ -126,7 +127,7 @@ http://127.0.0.1:8000/docs
 * JWT Authentication
 * Bulk insert API
 * SQLAlchemy ORM
-* Deployment (Render/Railway)
+* Deployment (Render / Railway)
 
 ---
 
@@ -138,4 +139,4 @@ http://127.0.0.1:8000/docs
 
 ## ⭐ Support
 
-If you like this project, consider giving it a ⭐
+If you like this project, consider giving it a ⭐ on GitHub!
